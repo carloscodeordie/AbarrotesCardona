@@ -8,6 +8,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductDashboardComponent } from './components/product-dashboard/product-dashboard.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -15,12 +21,18 @@ import { MessagesComponent } from './components/messages/messages.component';
     HeaderComponent,
     ProductsComponent,
     ProductDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    ProductDashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProductModel } from '../../interfaces/Product';
+import { Product } from '../../interfaces/Product';
 
 @Component({
   selector: 'app-product-detail',
@@ -10,7 +10,7 @@ export class ProductDetailComponent implements OnInit {
 
   constructor() { }
 
-  @Input() product!: ProductModel;
+  @Input() product!: Product;
 
   ngOnInit(): void {
   }
