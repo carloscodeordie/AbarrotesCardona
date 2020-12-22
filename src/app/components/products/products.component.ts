@@ -31,4 +31,8 @@ export class ProductsComponent implements OnInit {
     this.messageService.add(`ProductsComponent: Selected product id=${product.id}`);
   }
 
+  unsetSelectedProduct(): void {
+    this.selectedProduct = null;
+  }
+
 }

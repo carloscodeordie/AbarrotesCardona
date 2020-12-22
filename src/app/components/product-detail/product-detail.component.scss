@@ -1,4 +1,9 @@
 .products-details-container {
+    .product-title {
+        mat-icon {
+            cursor: pointer;
+        }
+    }
     .product-card {
         width: 100%;
         .product-content {

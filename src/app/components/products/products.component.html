@@ -7,10 +7,14 @@
                     <app-products-table 
                         *ngIf="products" 
                         [products]="products"
-                        (selectProduct)='setSelectedProduct($event)'></app-products-table>
+                        (selectProduct)='setSelectedProduct($event)'>
+                    </app-products-table>
                 </mat-grid-tile>
                 <mat-grid-tile [colspan]="4" [rowspan]="7">
-                    <app-product-detail [product]="selectedProduct"></app-product-detail>
+                    <app-product-detail 
+                        [product]="selectedProduct"
+                        (closeProduct)='unsetSelectedProduct()'>
+                    </app-product-detail>
                 </mat-grid-tile>
             </mat-grid-list>
         </mat-card-content>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../interfaces/Product';
 
 @Component({
@@ -11,8 +11,13 @@ export class ProductDetailComponent implements OnInit {
   constructor() { }
 
   @Input() product!: Product;
+  @Output() closeProduct = new EventEmitter();
 
   ngOnInit(): void {
+  }
+
+  onClose(): void {
+    this.closeProduct.emit();
   }
 
 }

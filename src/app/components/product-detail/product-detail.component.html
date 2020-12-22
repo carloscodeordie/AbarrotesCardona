@@ -1,5 +1,14 @@
-<div class="products-details-container" *ngIf="product">
-    <h2>Detalle del producto</h2>
+<section class="products-details-container" *ngIf="product">
+    <div class="product-title">
+        <mat-grid-list cols="3" rowHeight="2:1">
+            <mat-grid-tile [colspan]="2">
+                <h2>Detalle del producto</h2>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1">
+                <mat-icon aria-hidden="false" aria-label="Close icon" (click)="onClose()">close</mat-icon>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
     <mat-card class="product-card">
         <mat-card-header>
             <div mat-card-avatar class="card-header-image"></div>
@@ -11,4 +20,4 @@
             <p>Precio: {{ product.price }}</p>
         </mat-card-content>
     </mat-card>
-</div>
+</section>
