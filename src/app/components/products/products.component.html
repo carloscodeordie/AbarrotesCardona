@@ -1,10 +1,17 @@
-<h2>Products</h2>
-<div class="products-container">
-    <ul>
-        <li *ngFor="let product of products" (click)="onSelect(product)" [class.selected]="product === selectedProduct">
-            <span class="badge">{{product.id}}</span> {{product.name}}
-        </li>
-    </ul>
-</div>
+<section>
+    <mat-card>
+        <mat-card-title>Listado de Productos</mat-card-title>
+        <mat-card-content>
+            <mat-grid-list cols="2" rowHeight="100px">
+                <mat-grid-tile [colspan]="1" [rowspan]="7">
+                    Tabla
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="7">
+                    Detalles
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
+</section>
 
-<app-product-detail [product]="selectedProduct"></app-product-detail>
+
