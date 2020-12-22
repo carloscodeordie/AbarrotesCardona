@@ -1,13 +1,16 @@
-<section>
+<section class="products-container">
     <mat-card>
         <mat-card-title>Listado de Productos</mat-card-title>
         <mat-card-content>
-            <mat-grid-list cols="2" rowHeight="100px">
-                <mat-grid-tile [colspan]="1" [rowspan]="7">
-                    Tabla
+            <mat-grid-list cols="12" rowHeight="100px">
+                <mat-grid-tile [colspan]="8" [rowspan]="7">
+                    <app-products-table 
+                        *ngIf="products" 
+                        [products]="products"
+                        (selectProduct)='setSelectedProduct($event)'></app-products-table>
                 </mat-grid-tile>
-                <mat-grid-tile [colspan]="1" [rowspan]="7">
-                    Detalles
+                <mat-grid-tile [colspan]="4" [rowspan]="7">
+                    <app-product-detail [product]="selectedProduct"></app-product-detail>
                 </mat-grid-tile>
             </mat-grid-list>
         </mat-card-content>

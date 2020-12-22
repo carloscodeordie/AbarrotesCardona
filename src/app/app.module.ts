@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { ProductsTableComponent } from './components/products-table/products-table.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MatCardModule } from '@angular/material/card';
     ProductsComponent,
     ProductDetailComponent,
     MessagesComponent,
-    LayoutComponent
+    LayoutComponent,
+    ProductsTableComponent
   ],
   imports: [
     BrowserModule,

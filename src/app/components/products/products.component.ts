@@ -26,7 +26,7 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  onSelect(product: Product): void {
+  setSelectedProduct(product: Product): void {
     this.selectedProduct = product;
     this.messageService.add(`ProductsComponent: Selected product id=${product.id}`);
   }

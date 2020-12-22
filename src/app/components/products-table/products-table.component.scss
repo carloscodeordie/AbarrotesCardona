@@ -1,0 +1,12 @@
+.products-table-container {
+    overflow-y: scroll;
+    max-height: 40rem;
+    table {
+        width: 100%;
+    }
+      
+    .mat-form-field {
+        font-size: 14px;
+        width: 100%;
+    }
+}

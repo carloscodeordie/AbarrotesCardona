@@ -1,11 +1,14 @@
 <div class="products-details-container" *ngIf="product">
-    <h2>{{product.name | uppercase}} Details</h2>
-    <div>
-        <span>id: </span>{{product.id}}
-    </div>
-    <div>
-        <label>name:
-            <input [(ngModel)]="product.name" placeholder="name"/>
-        </label>
-    </div>
+    <h2>Detalle del producto</h2>
+    <mat-card class="product-card">
+        <mat-card-header>
+            <div mat-card-avatar class="card-header-image"></div>
+            <mat-card-title>{{ product.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="product-content">
+            <p>ID: {{ product.id }}</p>
+            <p>Marca: {{ product.brand }}</p>
+            <p>Precio: {{ product.price }}</p>
+        </mat-card-content>
+    </mat-card>
 </div>
