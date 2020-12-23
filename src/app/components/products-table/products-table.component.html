@@ -1,8 +1,18 @@
 <section class="products-table-container" *ngIf="products">
-    <mat-form-field>
-        <mat-label>Filtrar</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Atun" #input>
-    </mat-form-field>
+    
+    <div class="filter-container">
+        <mat-form-field>
+            <mat-label>Filtrar</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Atun" #input>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Proveedor</mat-label>
+            <mat-select (selectionChange)="applySelectFilter($event)" [value]="selectedProvider">
+                <mat-option value=""></mat-option>
+                <mat-option value="KC">KC</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
       
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       

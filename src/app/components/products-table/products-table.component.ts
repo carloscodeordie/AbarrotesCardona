@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MatSelectChange } from '@angular/material/select';
 
 import {MatTableDataSource} from '@angular/material/table';
 
@@ -16,6 +17,7 @@ export class ProductsTableComponent implements OnInit {
 
   displayedColumns!: string[];
   dataSource!: any;
+  selectedProvider: string;
 
   ngOnInit() {
     this.displayedColumns = ['name', 'brand', 'price'];
@@ -25,6 +27,11 @@ export class ProductsTableComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  applySelectFilter(option: MatSelectChange) {
+    this.selectedProvider = option.value;
+    this.dataSource.filter = this.selectedProvider.trim().toLowerCase();
   }
 
   onSelect(product: Product): void {
