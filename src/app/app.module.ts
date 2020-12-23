@@ -18,7 +18,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { MessagesComponent } from './components/messages/messages.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { ProductsTableComponent } from './components/products-table/products-table.component';
+import { ProductDeleteDialogComponent } from './components/product-delete-dialog/product-delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { ProductsTableComponent } from './components/products-table/products-tab
     ProductDetailComponent,
     MessagesComponent,
     LayoutComponent,
-    ProductsTableComponent
+    ProductsTableComponent,
+    ProductDeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,9 @@ import { ProductsTableComponent } from './components/products-table/products-tab
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

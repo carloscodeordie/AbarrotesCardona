@@ -18,4 +18,8 @@ export class ProductService {
     this.messageService.add('ProductService: fetched products');
     return of(PRODUCTS);
   }
+
+  deleteProduct(product: Product): Observable<Product> {
+    return of(product);
+  }
 }

@@ -1,10 +1,14 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { MatSelectChange } from '@angular/material/select';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
 
 import { Product } from '../../interfaces/Product';
 import { Provider } from '../../interfaces/Provider';
+
+import { ProductDeleteDialogComponent } from '../product-delete-dialog/product-delete-dialog.component';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-products-table',
@@ -15,19 +19,22 @@ export class ProductsTableComponent implements OnInit {
 
   @Input() products!: Product[];
   @Input() providers!: Provider[];
-  @Output() selectProduct = new EventEmitter();
+  @Input() selectedProduct: Product;
+
+  @Output() onSelectProduct = new EventEmitter();
+  @Output() onDeleteProduct = new EventEmitter();
 
   displayedColumns!: string[];
   dataSource!: any;
   selectedFilter: string;
   selectedProvider: string;
-
-  constructor() { }
+  
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
     this.selectedFilter = '';
-
-    this.displayedColumns = ['name', 'brand', 'price'];
+    
+    this.displayedColumns = ['actions', 'name', 'brand', 'price'];
     this.dataSource = new MatTableDataSource(this.products);
   }
 
@@ -60,7 +67,21 @@ export class ProductsTableComponent implements OnInit {
   }
 
   onSelect(product: Product): void {
-    this.selectProduct.emit(product);
+    this.onSelectProduct.emit(product);
+  }
+
+  OpenDeleteModal(product: Product): void {
+    const dialogRef = this.dialog.open(ProductDeleteDialogComponent, {
+      data: {
+        product: product
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        this.onDeleteProduct.emit(result.product);
+      }
+    });
   }
 
 }

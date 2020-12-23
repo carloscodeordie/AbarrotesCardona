@@ -8,7 +8,9 @@
                         *ngIf="products" 
                         [products]="products"
                         [providers]="providers"
-                        (selectProduct)='setSelectedProduct($event)'>
+                        [selectedProduct]="selectedProduct"
+                        (onSelectProduct)='onSelectProduct($event)'
+                        (onDeleteProduct)='onDeleteProduct($event)'>
                     </app-products-table>
                 </mat-grid-tile>
                 <mat-grid-tile [colspan]="4" [rowspan]="7">
