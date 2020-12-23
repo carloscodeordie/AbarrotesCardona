@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Product } from '../../interfaces/Product';
+import { Provider } from '../../interfaces/Provider';
+
 import { ProductService } from '../../services/product/product.service';
 import { MessageService } from '../../services/message/message.service';
+import { ProviderService } from '../../services/provider/provider.service';
 
 @Component({
   selector: 'app-products',
@@ -11,18 +14,29 @@ import { MessageService } from '../../services/message/message.service';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private productService: ProductService, private messageService: MessageService) { }
+  constructor(
+    private productService: ProductService, 
+    private messageService: MessageService,
+    private providerService: ProviderService) { }
 
   products!: Product[];
+  providers!: Provider[];
   selectedProduct!: Product;
   
   ngOnInit(): void {
     this.getProducts();
+    this.getProviders();
   }
 
   getProducts(): void {
     this.productService.getProducts().subscribe(response => {
       this.products = response;
+    });
+  }
+
+  getProviders(): void {
+    this.providerService.getProviders().subscribe(response => {
+      this.providers = response;
     });
   }
 
