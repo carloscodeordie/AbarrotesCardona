@@ -31,6 +31,21 @@ export class ProductsTableComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.products);
   }
 
+  isFiltersSelected(): boolean {
+    let isFilters: boolean = false;
+    if(this.selectedFilter !== '' || this.selectedProvider) {
+      isFilters = true;
+    }
+    return isFilters;
+  }
+
+  clearFilters(): void {
+    this.selectedFilter = '';
+    this.selectedProvider = null;
+
+    this.dataSource.filter = this.selectedFilter;
+  }
+
   applyGeneralFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

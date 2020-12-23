@@ -3,15 +3,18 @@
     <div class="filter-container">
         <mat-form-field>
             <mat-label>Filtrar</mat-label>
-            <input matInput (keyup)="applyGeneralFilter($event)" placeholder="Ej. Atun" #input [value]="selectedFilter">
+            <input matInput (keyup)="applyGeneralFilter($event)" placeholder="Ej. Atun" #input [(ngModel)]="selectedFilter">
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field>
             <mat-label>Proveedor</mat-label>
             <mat-select (selectionChange)="applyProviderFilter($event)" [(ngModel)]="selectedProvider">
                 <mat-option value=""></mat-option>
                 <mat-option *ngFor="let provider of providers; let i = index" value="{{ provider.name }}">{{ provider.name }}</mat-option>
             </mat-select>
         </mat-form-field>
+        <button mat-icon-button aria-label="Limpiar filtros" *ngIf="isFiltersSelected()" (click)="clearFilters()">
+            <mat-icon>clear</mat-icon>
+        </button>
     </div>
       
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
