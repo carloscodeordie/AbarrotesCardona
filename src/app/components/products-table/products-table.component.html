@@ -3,7 +3,7 @@
     <div class="filter-container">
         <mat-form-field>
             <mat-label>Filtrar</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Atun" #input>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Atun" #input [value]="selectedFilter">
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Proveedor</mat-label>
