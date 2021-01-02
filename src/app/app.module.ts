@@ -34,6 +34,7 @@ import { ProductsTableComponent } from './components/products-table/products-tab
 import { ProductDeleteDialogComponent } from './components/product-delete-dialog/product-delete-dialog.component';
 import { ProductSearchFormComponent } from './components/product-search-form/product-search-form.component';
 import { ProductEditDialogComponent } from './components/product-edit-dialog/product-edit-dialog.component';
+import { ProductAddDialogComponent } from './components/product-add-dialog/product-add-dialog.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ProductEditDialogComponent } from './components/product-edit-dialog/pro
     ProductDeleteDialogComponent,
     ProductSearchComponent,
     ProductSearchFormComponent,
-    ProductEditDialogComponent
+    ProductEditDialogComponent,
+    ProductAddDialogComponent
   ],
   imports: [
     BrowserModule,

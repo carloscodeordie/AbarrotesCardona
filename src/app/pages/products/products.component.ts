@@ -45,13 +45,22 @@ export class ProductsComponent implements OnInit {
     this.messageService.add(`ProductsComponent: Selected product id=${product.id}`);
   }
 
+  onAddProduct(product: Product): void {
+    console.log(product);
+    this.productService.addProduct(product).subscribe(response => {
+      this.getProducts();
+    });
+  }
+
   onEditProduct(product: Product): void {
+    console.log(product);
     this.productService.editProduct(product).subscribe(response => {
       this.getProducts();
     });
   }
 
   onDeleteProduct(product: Product): void {
+    console.log(product);
     this.productService.deleteProduct(product).subscribe(response => {
       this.getProducts();
     });

@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Product } from '../../interfaces/Product';
 import { Provider } from '../../interfaces/Provider';
 
+import { ProductAddDialogComponent } from '../product-add-dialog/product-add-dialog.component';
 import { ProductDeleteDialogComponent } from '../product-delete-dialog/product-delete-dialog.component';
 import { ProductEditDialogComponent } from '../product-edit-dialog/product-edit-dialog.component';
 
@@ -24,6 +25,7 @@ export class ProductsTableComponent implements OnInit {
   @Output() onSelectProduct = new EventEmitter();
   @Output() onDeleteProduct = new EventEmitter();
   @Output() onEditProduct = new EventEmitter();
+  @Output() onAddProduct = new EventEmitter();
 
   displayedColumns!: string[];
   dataSource!: any;
@@ -69,6 +71,29 @@ export class ProductsTableComponent implements OnInit {
 
   onSelect(product: Product): void {
     this.onSelectProduct.emit(product);
+  }
+
+  openAddModal(): void {
+    let newProduct: Product = {
+      id: null,
+      name: null,
+      brand: null,
+      price: null,
+      provider: null
+    }
+    
+    const dialogRef = this.dialog.open(ProductAddDialogComponent, {
+      data: {
+        product: newProduct,
+        providers: this.providers
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        this.onAddProduct.emit(result);
+      }
+    });
   }
 
   openDeleteModal(product: Product): void {

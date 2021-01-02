@@ -1,26 +1,30 @@
 $maxWidth: 100%;
-$maxHeight: 40rem;
+$maxHeight: 60rem;
 $searchFontSize: 1.4rem;
+$actionButtonsAlign: right;
 
 .products-table-container {
 
-    overflow-y: scroll;
-    max-height: $maxHeight;
-    
-    .mat-form-field {
-        font-size: $searchFontSize;
-    }
-
-    .mat-form-field + .mat-form-field {
-        margin-left: 8px;
-    }
-    
-    table {
-        width: $maxWidth;
-        .product-row {
-            cursor: pointer;
+    .filter-container {
+        .input-container {
+            .mat-form-field {
+                font-size: $searchFontSize; 
+            }
+            .mat-form-field + .mat-form-field {
+                margin-left: 8px;
+            }
         }
     }
-      
+    
+    .table-container {
+        max-height: $maxHeight;
+        overflow-y: scroll;
+        table {
+            width: $maxWidth;
+            .product-row {
+                cursor: pointer;
+            }
+        }
+    }
     
 }
