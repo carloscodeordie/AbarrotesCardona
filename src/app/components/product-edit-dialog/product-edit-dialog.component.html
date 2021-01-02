@@ -1,1 +1,38 @@
-<p>product-edit-dialog works!</p>
+<section class="product-edit-dialog-component">
+    <h2 mat-dialog-title>Editar Producto</h2>
+    <mat-dialog-content class="mat-typography">
+        <form name="product-form">
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput name="name" type="text" [(ngModel)]="product.name" placeholder="Nombre" [value]="product.name">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Marca</mat-label>
+                    <input matInput name="brand" type="text" [(ngModel)]="product.brand" placeholder="Marca" [value]="product.brand">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Proveedor</mat-label>
+                    <mat-select [(value)]="selectedProvider" (selectionChange)="changeProvider($event)">
+                        <mat-option value=""></mat-option>
+                        <mat-option *ngFor="let provider of providers; let i = index" value="{{ provider.name }}">{{ provider.name }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Precio</mat-label>
+                    <input matInput name="price" type="text" [(ngModel)]="product.price" placeholder="Precio" [value]="product.price">
+                </mat-form-field>
+            </p>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button (click)="closeModal()">Cancelar</button>
+        <button mat-raised-button color="warn" (click)="editProduct()" cdkFocusInitial>Editar</button>
+    </mat-dialog-actions>
+</section>

@@ -45,13 +45,16 @@ export class ProductsComponent implements OnInit {
     this.messageService.add(`ProductsComponent: Selected product id=${product.id}`);
   }
 
+  onEditProduct(product: Product): void {
+    this.productService.editProduct(product).subscribe(response => {
+      this.getProducts();
+    });
+  }
+
   onDeleteProduct(product: Product): void {
-    if(product)
-    {
-      this.productService.deleteProduct(product).subscribe(response => {
-        this.getProducts();
-      });
-    }
+    this.productService.deleteProduct(product).subscribe(response => {
+      this.getProducts();
+    });
   }
 
   unsetSelectedProduct(): void {

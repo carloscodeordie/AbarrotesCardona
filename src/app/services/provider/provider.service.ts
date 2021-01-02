@@ -15,4 +15,19 @@ export class ProviderService {
   getProviders(): Observable<Provider[]> {
     return of(PROVIDERS);
   }
+
+  getProviderByName(providers: Provider[], name: string): Provider {
+    let searchedProvider: Provider;
+    // TODO: Change this later to use something more complex
+    for(let i = 0; i < providers.length; i++)
+    {
+      const prov = providers[i];
+      if(prov.name == name)
+      {
+        searchedProvider = prov;
+        break;
+      }
+    }
+    return searchedProvider;
+  }
 }

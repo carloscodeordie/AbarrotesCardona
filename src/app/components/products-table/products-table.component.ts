@@ -88,13 +88,14 @@ export class ProductsTableComponent implements OnInit {
   openEditModal(product: Product): void {
     const dialogRef = this.dialog.open(ProductEditDialogComponent, {
       data: {
-        product: product
+        product: product,
+        providers: this.providers
       }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if(result) {
-        this.onEditProduct.emit(result.product);
+    dialogRef.afterClosed().subscribe(product => {
+      if(product) {
+        this.onEditProduct.emit(product);
       }
     });
   }

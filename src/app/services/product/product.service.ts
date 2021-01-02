@@ -22,6 +22,10 @@ export class ProductService {
     return of(PRODUCTS[0]);
   }
 
+  editProduct(product: Product): Observable<Product> {
+    return of(product);
+  }
+
   deleteProduct(product: Product): Observable<Product> {
     return of(product);
   }
