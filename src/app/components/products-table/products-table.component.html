@@ -23,8 +23,8 @@
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef> Acciones </th>
             <td mat-cell *matCellDef="let element">
-                <mat-icon>edit</mat-icon>
-                <mat-icon (click)="OpenDeleteModal(element)">delete</mat-icon>
+                <mat-icon (click)="openEditModal(element)">edit</mat-icon>
+                <mat-icon (click)="openDeleteModal(element)">delete</mat-icon>
             </td>
         </ng-container>
 

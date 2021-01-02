@@ -8,7 +8,7 @@ import { Product } from '../../interfaces/Product';
 import { Provider } from '../../interfaces/Provider';
 
 import { ProductDeleteDialogComponent } from '../product-delete-dialog/product-delete-dialog.component';
-import { SelectionModel } from '@angular/cdk/collections';
+import { ProductEditDialogComponent } from '../product-edit-dialog/product-edit-dialog.component';
 
 @Component({
   selector: 'app-products-table',
@@ -23,6 +23,7 @@ export class ProductsTableComponent implements OnInit {
 
   @Output() onSelectProduct = new EventEmitter();
   @Output() onDeleteProduct = new EventEmitter();
+  @Output() onEditProduct = new EventEmitter();
 
   displayedColumns!: string[];
   dataSource!: any;
@@ -70,7 +71,7 @@ export class ProductsTableComponent implements OnInit {
     this.onSelectProduct.emit(product);
   }
 
-  OpenDeleteModal(product: Product): void {
+  openDeleteModal(product: Product): void {
     const dialogRef = this.dialog.open(ProductDeleteDialogComponent, {
       data: {
         product: product
@@ -80,6 +81,20 @@ export class ProductsTableComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result) {
         this.onDeleteProduct.emit(result.product);
+      }
+    });
+  }
+
+  openEditModal(product: Product): void {
+    const dialogRef = this.dialog.open(ProductEditDialogComponent, {
+      data: {
+        product: product
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        this.onEditProduct.emit(result.product);
       }
     });
   }

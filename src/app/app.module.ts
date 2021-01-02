@@ -21,14 +21,19 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
+import { ProductSearchComponent } from './pages/product-search/product-search.component';
+import { ProductsComponent } from './pages/products/products.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './components/products/products.component';
+import { LayoutComponent } from './components/layout/layout.component';
+
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { MessagesComponent } from './components/messages/messages.component';
-import { LayoutComponent } from './components/layout/layout.component';
 import { ProductsTableComponent } from './components/products-table/products-table.component';
 import { ProductDeleteDialogComponent } from './components/product-delete-dialog/product-delete-dialog.component';
+import { ProductSearchFormComponent } from './components/product-search-form/product-search-form.component';
+import { ProductEditDialogComponent } from './components/product-edit-dialog/product-edit-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,10 @@ import { ProductDeleteDialogComponent } from './components/product-delete-dialog
     MessagesComponent,
     LayoutComponent,
     ProductsTableComponent,
-    ProductDeleteDialogComponent
+    ProductDeleteDialogComponent,
+    ProductSearchComponent,
+    ProductSearchFormComponent,
+    ProductEditDialogComponent
   ],
   imports: [
     BrowserModule,

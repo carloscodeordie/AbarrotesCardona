@@ -1,0 +1,17 @@
+$formWidth: 25rem;
+$searchInputWidth: 100%;
+$clearButtonAlign: right;
+.product-search-form-component {
+    .search-form {
+        min-width: $formWidth;
+        .custom-full-width {
+            width: $searchInputWidth;
+        }
+        .product-search-action-container {
+            float: $clearButtonAlign;
+        }
+        .search-icon {
+            font-size: 2rem;
+        }
+    }
+}

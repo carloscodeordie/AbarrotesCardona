@@ -1,0 +1,26 @@
+<section class="product-search-form-component">
+    <mat-grid-list cols="12" rowHeight="100px">
+        <mat-grid-tile [colspan]="4" [rowspan]="2">
+            <mat-card>
+                <form name="search-form" class="search-form">
+                    <mat-form-field class="custom-full-width">
+                        <mat-label>Buscar:</mat-label>
+                        <input name="search" type="search" matInput [(ngModel)]="search" (keyup)="doSearch($event)" placeholder="Ej: Zanahoria">
+                        <button mat-button *ngIf="search" matSuffix mat-icon-button aria-label="Search" (click)="searchProduct()">
+                            <mat-icon class="search-icon">search</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <div class="product-search-action-container">
+                        <button mat-raised-button color="accent" (click)="clearSearch()">Limpiar</button>
+                    </div>
+                </form>
+            </mat-card>        
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="2">
+            <div *ngIf="product">
+                <p>Nombre: {{ product.name }}</p>
+                <p>Precio: {{ product.price }}</p>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</section>

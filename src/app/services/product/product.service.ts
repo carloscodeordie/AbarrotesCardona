@@ -14,9 +14,12 @@ export class ProductService {
   constructor(private messageService: MessageService) { }
 
   getProducts(): Observable<Product[]> {
-    // TODO: send the message _after_ fetching the heroes
     this.messageService.add('ProductService: fetched products');
     return of(PRODUCTS);
+  }
+
+  getProductByCode(code: string) {
+    return of(PRODUCTS[0]);
   }
 
   deleteProduct(product: Product): Observable<Product> {
