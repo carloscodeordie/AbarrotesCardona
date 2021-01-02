@@ -37,7 +37,7 @@ export class ProductsTableComponent implements OnInit {
   ngOnInit() {
     this.selectedFilter = '';
     
-    this.displayedColumns = ['actions', 'name', 'brand', 'price'];
+    this.displayedColumns = ['actions', 'name', 'description', 'price_sale'];
     this.dataSource = new MatTableDataSource(this.products);
   }
 
@@ -76,9 +76,13 @@ export class ProductsTableComponent implements OnInit {
   openAddModal(): void {
     let newProduct: Product = {
       id: null,
+      code: null,
       name: null,
-      brand: null,
-      price: null,
+      description: null,
+      current_stock: null,
+      minimum_stock: null,
+      price_buy: null,
+      price_sale: null,
       provider: null
     }
     

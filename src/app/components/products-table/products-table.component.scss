@@ -1,5 +1,5 @@
 $maxWidth: 100%;
-$maxHeight: 60rem;
+$maxHeight: 35rem;
 $searchFontSize: 1.4rem;
 $actionButtonsAlign: right;
 
@@ -17,8 +17,10 @@ $actionButtonsAlign: right;
     }
     
     .table-container {
-        max-height: $maxHeight;
         overflow-y: scroll;
+        max-height: $maxHeight;
+        min-height: $maxHeight;
+        
         table {
             width: $maxWidth;
             .product-row {

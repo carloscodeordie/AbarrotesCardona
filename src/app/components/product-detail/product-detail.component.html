@@ -1,23 +1,17 @@
 <section class="products-details-container" *ngIf="product">
-    <div class="product-title">
-        <mat-grid-list cols="3" rowHeight="2:1">
-            <mat-grid-tile [colspan]="2">
-                <h2>Detalle del producto</h2>
-            </mat-grid-tile>
-            <mat-grid-tile [colspan]="1">
-                <mat-icon aria-hidden="false" aria-label="Close icon" (click)="onClose()">close</mat-icon>
-            </mat-grid-tile>
-        </mat-grid-list>
-    </div>
     <mat-card class="product-card">
-        <mat-card-header>
-            <div mat-card-avatar class="card-header-image"></div>
-            <mat-card-title>{{ product.name }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="product-content">
-            <p>ID: {{ product.id }}</p>
-            <p>Marca: {{ product.brand }}</p>
-            <p>Precio: {{ product.price }}</p>
+        <mat-card-content>
+            <div class="product-content">
+                <mat-icon aria-hidden="false" aria-label="Close icon" (click)="onClose()">close</mat-icon>
+                <ul class="details">
+                    <li class="header">{{ product.name }}</li>
+                    <li class="grey">$ {{ product.price_sale }}</li>
+                    <li>{{ product.description }}</li>
+                    <li>Existencias: {{ product.current_stock }}</li>
+                    <li>Codigo: {{ product.code }}</li>
+                    <li>Proveedor: {{ product.provider.name }}</li>
+                </ul>
+            </div>
         </mat-card-content>
     </mat-card>
 </section>

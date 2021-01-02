@@ -3,8 +3,12 @@ import { Provider } from "./Provider";
 export interface Product
 {
     id: number;
+    code: number;
     name: string;
-    brand: string;
-    price: number;
+    description: string;
+    price_buy: number;
+    price_sale: number;
+    minimum_stock: number;
+    current_stock: number;
     provider: Provider;
 }

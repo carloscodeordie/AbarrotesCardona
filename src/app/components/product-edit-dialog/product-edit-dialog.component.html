@@ -10,12 +10,6 @@
             </p>
             <p>
                 <mat-form-field appearance="fill">
-                    <mat-label>Marca</mat-label>
-                    <input matInput name="brand" type="text" [(ngModel)]="product.brand" placeholder="Marca" [value]="product.brand">
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field appearance="fill">
                     <mat-label>Proveedor</mat-label>
                     <mat-select [(value)]="selectedProvider" (selectionChange)="changeProvider($event)">
                         <mat-option value=""></mat-option>
@@ -25,8 +19,8 @@
             </p>
             <p>
                 <mat-form-field appearance="fill">
-                    <mat-label>Precio</mat-label>
-                    <input matInput name="price" type="text" [(ngModel)]="product.price" placeholder="Precio" [value]="product.price">
+                    <mat-label>Precio de venta</mat-label>
+                    <input matInput name="price_sale" type="text" [(ngModel)]="product.price_sale" placeholder="Precio de venta" [value]="product.price_sale">
                 </mat-form-field>
             </p>
         </form>
