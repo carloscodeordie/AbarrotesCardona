@@ -49,7 +49,7 @@
             <!-- Price Column -->
             <ng-container matColumnDef="price_sale">
                 <th mat-header-cell *matHeaderCellDef> Precio de venta </th>
-                <td mat-cell *matCellDef="let element"> {{element.price_sale}} </td>
+                <td mat-cell *matCellDef="let element"> ${{element.price_sale}} </td>
             </ng-container>
             <!-- Table content -->
             <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>

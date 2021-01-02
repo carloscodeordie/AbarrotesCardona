@@ -10,17 +10,47 @@
             </p>
             <p>
                 <mat-form-field appearance="fill">
-                    <mat-label>Proveedor</mat-label>
-                    <mat-select [(value)]="selectedProvider" (selectionChange)="changeProvider($event)">
-                        <mat-option value=""></mat-option>
-                        <mat-option *ngFor="let provider of providers; let i = index" value="{{ provider.name }}">{{ provider.name }}</mat-option>
-                    </mat-select>
+                    <mat-label>Codigo de barras</mat-label>
+                    <input matInput name="code" type="text" [(ngModel)]="product.code" placeholder="Codigo de barras" [value]="product.code">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Descripcion</mat-label>
+                    <input matInput name="description" type="text" [(ngModel)]="product.description" placeholder="Descripcion" [value]="product.description">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Existencias actuales</mat-label>
+                    <input matInput name="current_stock" type="text" [(ngModel)]="product.current_stock" placeholder="Existencias actuales" [value]="product.current_stock">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Existencias minimas</mat-label>
+                    <input matInput name="minimum_stock" type="text" [(ngModel)]="product.minimum_stock" placeholder="Existencias minimas" [value]="product.minimum_stock">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Precio de compra</mat-label>
+                    <input matInput name="price_buy" type="text" [(ngModel)]="product.price_buy" placeholder="Precio de compra" [value]="product.price_buy">
                 </mat-form-field>
             </p>
             <p>
                 <mat-form-field appearance="fill">
                     <mat-label>Precio de venta</mat-label>
                     <input matInput name="price_sale" type="text" [(ngModel)]="product.price_sale" placeholder="Precio de venta" [value]="product.price_sale">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Proveedor</mat-label>
+                    <mat-select [(value)]="selectedProvider" (selectionChange)="changeProvider($event)">
+                        <mat-option value=""></mat-option>
+                        <mat-option *ngFor="let provider of providers; let i = index" value="{{ provider.name }}">{{ provider.name }}</mat-option>
+                    </mat-select>
                 </mat-form-field>
             </p>
         </form>
