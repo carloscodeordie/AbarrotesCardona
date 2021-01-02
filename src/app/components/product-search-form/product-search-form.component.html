@@ -1,6 +1,6 @@
 <section class="product-search-form-component">
     <mat-grid-list cols="12" rowHeight="100px">
-        <mat-grid-tile [colspan]="4" [rowspan]="2">
+        <mat-grid-tile [colspan]="12" [rowspan]="2">
             <mat-card>
                 <form name="search-form" class="search-form">
                     <mat-form-field class="custom-full-width">
@@ -16,10 +16,12 @@
                 </form>
             </mat-card>        
         </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="2">
+        <mat-grid-tile [colspan]="12" [rowspan]="5">
             <div *ngIf="product">
-                <p>Nombre: {{ product.name }}</p>
-                <p>Precio de venta: {{ product.price_sale }}</p>
+                <app-product-detail 
+                    [product]="product"
+                    (closeProduct)='clearSearch()'>
+                </app-product-detail>
             </div>
         </mat-grid-tile>
     </mat-grid-list>
