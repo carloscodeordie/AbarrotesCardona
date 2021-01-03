@@ -1,0 +1,14 @@
+<section class="details-container" *ngIf="employee">
+    <mat-card class="card">
+        <mat-card-content>
+            <div class="content">
+                <mat-icon aria-hidden="false" aria-label="Close icon" (click)="onClose()">close</mat-icon>
+                <ul class="details">
+                    <li class="header">{{ employee.name }}</li>
+                    <li class="grey">{{ employee.name }}</li>
+                    <li>{{ employee.born_date | date }}</li>
+                </ul>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</section>

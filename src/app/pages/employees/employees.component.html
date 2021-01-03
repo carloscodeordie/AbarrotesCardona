@@ -1,0 +1,26 @@
+<section class="employees-container">
+    <mat-card>
+        <mat-card-title>Listado de Empleados</mat-card-title>
+        <mat-card-content>
+            <mat-grid-list cols="12">
+                <mat-grid-tile [colspan]="8" [rowspan]="5">
+                    <app-employees-table 
+                        *ngIf="employees" 
+                        [employees]="employees"
+                        [selectedEmployee]="selectedEmployee"
+                        (onSelectRow)='onSelectRow($event)'
+                        (onAdd)='onAdd($event)'
+                        (onDelete)='onDelete($event)'
+                        (onEdit)='onEdit($event)'>
+                    </app-employees-table>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="4" [rowspan]="5">
+                    <app-employee-detail 
+                        [employee]="selectedEmployee"
+                        (closeDetails)='unsetSelected()'>
+                    </app-employee-detail>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
+</section>

@@ -1,0 +1,17 @@
+<section class="edit-dialog-component">
+    <h2 mat-dialog-title>Editar Empleado</h2>
+    <mat-dialog-content class="mat-typography">
+        <form name="form">
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput name="name" type="text" [(ngModel)]="employee.name" placeholder="Nombre" [value]="employee.name">
+                </mat-form-field>
+            </p>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button (click)="closeModal()">Cancelar</button>
+        <button mat-raised-button color="warn" (click)="edit()" cdkFocusInitial>Editar</button>
+    </mat-dialog-actions>
+</section>

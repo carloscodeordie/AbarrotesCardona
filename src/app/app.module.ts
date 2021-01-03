@@ -21,12 +21,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
-import { ProductSearchComponent } from './pages/product-search/product-search.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { ProductSearchComponent } from './pages/product-search/product-search.component';
+import { EmployeesComponent } from './pages/employees/employees.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './components/layout/layout.component';
+import { LayoutComponent } from './layout/layout.component';
 
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { MessagesComponent } from './components/messages/messages.component';
@@ -35,6 +36,11 @@ import { ProductDeleteDialogComponent } from './components/product-delete-dialog
 import { ProductSearchFormComponent } from './components/product-search-form/product-search-form.component';
 import { ProductEditDialogComponent } from './components/product-edit-dialog/product-edit-dialog.component';
 import { ProductAddDialogComponent } from './components/product-add-dialog/product-add-dialog.component';
+import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
+import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
+import { EmployeeAddDialogComponent } from './components/employee-add-dialog/employee-add-dialog.component';
+import { EmployeeEditDialogComponent } from './components/employee-edit-dialog/employee-edit-dialog.component';
+import { EmployeeDeleteDialogComponent } from './components/employee-delete-dialog/employee-delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +54,13 @@ import { ProductAddDialogComponent } from './components/product-add-dialog/produ
     ProductSearchComponent,
     ProductSearchFormComponent,
     ProductEditDialogComponent,
-    ProductAddDialogComponent
+    ProductAddDialogComponent,
+    EmployeesComponent,
+    EmployeeDetailComponent,
+    EmployeesTableComponent,
+    EmployeeAddDialogComponent,
+    EmployeeEditDialogComponent,
+    EmployeeDeleteDialogComponent
   ],
   imports: [
     BrowserModule,
