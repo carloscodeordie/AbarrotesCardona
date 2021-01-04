@@ -18,7 +18,8 @@ export class EmployeeAddDialogComponent implements OnInit {
   employee: Employee;
   employeeTypes: EmployeeType[];
   schedules: Schedule[];
-  selectedEmployee: string;
+  selectedEmployeeType: string;
+  selectedSchedule: string;
 
   constructor(public dialogRef: MatDialogRef<EmployeeAddDialogComponent>, 
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -29,7 +30,8 @@ export class EmployeeAddDialogComponent implements OnInit {
     this.employee = this.data.employee;
     this.employeeTypes = this.data.employeeTypes;
     this.schedules = this.data.schedules;
-    this.selectedEmployee = null;
+    this.selectedEmployeeType = null;
+    this.selectedSchedule = null;
   }
 
   closeModal(): void {
@@ -38,6 +40,14 @@ export class EmployeeAddDialogComponent implements OnInit {
 
   add(): void {
     this.dialogRef.close(this.employee);
+  }
+
+  changeEmployeeType(event: any): void {
+    this.employee.employeeType = this.employeeTypeService.getEmployeeTypeByName(this.employeeTypes, event.value);
+  }
+
+  changeSchedule(event: any): void {
+    this.employee.schedule = this.scheduleService.getScheduleByWorkDays(this.schedules, event.value);
   }
 
 }

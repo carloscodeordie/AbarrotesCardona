@@ -8,6 +8,54 @@
                     <input matInput name="name" type="text" [(ngModel)]="employee.name" placeholder="Nombre" [value]="employee.name">
                 </mat-form-field>
             </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha de nacimiento</mat-label>
+                    <input matInput name="born_date" type="date" [(ngModel)]="employee.born_date" placeholder="Fecha de nacimiento" [value]="employee.born_date">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha de contratacion</mat-label>
+                    <input matInput name="hire_date" type="date" [(ngModel)]="employee.hire_date" placeholder="Fecha de contratacion" [value]="employee.hire_date">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha de salida</mat-label>
+                    <input matInput name="leave_date" type="date" [(ngModel)]="employee.leave_date" placeholder="Fecha de salida" [value]="employee.leave_date">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Numero de seguro social</mat-label>
+                    <input matInput name="social_security_number" type="number" [(ngModel)]="employee.social_security_number" placeholder="Numero de seguro social" [value]="employee.social_security_number">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Tipo de empleado</mat-label>
+                    <mat-select [(value)]="selectedEmployeeType" (selectionChange)="changeEmployeeType($event)">
+                        <mat-option value=""></mat-option>
+                        <mat-option *ngFor="let employeeType of employeeTypes; let i = index" value="{{ employeeType.id }}">{{ employeeType.name }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Horario</mat-label>
+                    <mat-select [(value)]="selectedSchedule" (selectionChange)="changeSchedule($event)">
+                        <mat-option value=""></mat-option>
+                        <mat-option *ngFor="let schedule of schedules; let i = index" value="{{ schedule.id }}">{{ schedule.work_days }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Salario</mat-label>
+                    <input matInput name="salary" type="number" [(ngModel)]="employee.salary" placeholder="Salario" [value]="employee.salary">
+                </mat-form-field>
+            </p>
         </form>
     </mat-dialog-content>
     <mat-dialog-actions align="end">

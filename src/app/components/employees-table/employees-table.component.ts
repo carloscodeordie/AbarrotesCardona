@@ -74,8 +74,16 @@ export class EmployeesTableComponent implements OnInit {
       leave_date: null,
       salary: null,
       social_security_number: null,
-      employeeType: null,
-      schedule: null
+      employeeType: {
+        id: null,
+        name: null
+      },
+      schedule: {
+        id: null,
+        check_in: null,
+        check_out: null,
+        work_days: null
+      }
     }
     
     const dialogRef = this.dialog.open(EmployeeAddDialogComponent, {

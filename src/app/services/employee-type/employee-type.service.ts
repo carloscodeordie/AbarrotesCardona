@@ -18,4 +18,19 @@ export class EmployeeTypeService {
     return of(EMPLOYEETYPES);
   }
 
+  getEmployeeTypeByName(employeeTypes: EmployeeType[], name: string): EmployeeType {
+    let searched: EmployeeType;
+    // TODO: Change this later to use something more complex
+    for(let i = 0; i < employeeTypes.length; i++)
+    {
+      const aux = employeeTypes[i];
+      if(aux.name == name)
+      {
+        searched = aux;
+        break;
+      }
+    }
+    return searched;
+  }
+
 }
